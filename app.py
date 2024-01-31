@@ -21,7 +21,7 @@ def index():
             }
         )
         r = requests.post('https://api.replicate.com/v1/predictions',data=data,headers=headers)
-        time.sleep(10)
+        time.sleep(15)
         r = r.json()["urls"]["get"]
         r = requests.post(r,headers=headers).json()["output"]
         return(render_template("index.html",r=r[0]))
